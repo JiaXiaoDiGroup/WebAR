@@ -1,0 +1,45 @@
+<!--
+ * @Author: 书生 835393931@qq.com
+ * @Date: 2023-08-10 14:11:51
+ * @LastEditors: 书生 835393931@qq.com
+ * @LastEditTime: 2023-08-16 12:13:06
+ * @FilePath: \QRCodeScan\index.html
+ 
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+    <script type="text/javascript" src="/public/ckplayer-master/ckplayer/hls.js/hls.min.js"></script>
+     
+    <script type="text/javascript" charset="utf-8" src="/public/ckplayer-master/ckplayer/js/ckplayer.js"></script>
+    
+    <script type="module" crossorigin src="./assets/index-fc82231f.js"></script>
+    <link rel="stylesheet" href="./assets/index-f6de5e92.css">
+  </head>
+  <body style="margin: 0;">
+    <div id="app"></div>
+    
+
+  </body>
+</html>
+<script>
+  const WIDTH = 750
+  const mobileAdapter = () => {
+    let scale = screen.width/WIDTH
+    let content = `width=${WIDTH}, initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}`
+    let meta = document.querySelector('meta[name=viewport]')
+    if(!meta) {
+      meta = document.createElement('meta')
+      meta.setAttribute('name', 'viewport')
+      document.head.appendChild(meta)
+    } 
+    meta.setAttribute('content', content)
+  }
+  mobileAdapter()
+  window.onorientationchange = mobileAdapter
+</script>
